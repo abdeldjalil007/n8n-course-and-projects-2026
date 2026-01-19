@@ -25,8 +25,9 @@ starting from the basics and progressing to advanced real-world workflows.
 - Working with data tables
 - Connecting external applications (APIs)
 - Building real-world automation workflows
+- Connecting AI agent
 - MCP server integration
-- Connecting AI agents
+
 
 
 ## 🎯 Goal
