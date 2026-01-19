@@ -52,9 +52,8 @@ Restart your PC and enter the BIOS settings, then enable:
 Save the changes and exit the BIOS to apply them.
 
 > ℹ️ If you cannot find this option, search on YouTube:  
-> **"How to enable virtualization + your laptop model"**
+> **"How to enable virtualization + your laptop (OR PC) model"**
 
----
 
 ### 2. Install WSL (Windows Subsystem for Linux)
 
@@ -88,7 +87,100 @@ Make sure Docker Desktop is running, open CMD then pull the n8n image using :
 ```
 
 ### 5. Run n8n in Docker
+
 Now you can start n8n using : 
 ```cmd
 docker run -d --name n8n -p 5678:5678 -e WEBHOOK_URL=https://subdomain.domain.com -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem -v "C:\Users\%USERNAME%\.n8n:/home/node/.n8n" docker.n8n.io/n8nio/n8n
 ```
+### 6. Tunnel configuration
+
+Follow the course.
+
+Links  needed :
+
+- **Domain discount finder:** [TLD-List](https://tld-list.com)
+- **Cloudflare**: [Link](https://dash.cloudflare.com)
+
+> **ℹ️ If you cannot buy a domain, you can ask for a ready one from us (Registered members only)**
+
+## 🖥️ System Preparation (Linux – Ubuntu/Debian)
+
+### 1. Update Your System
+Open a terminal and run:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### 2. Install Docker Engine
+
+Run the following commands **one by one, in this exact order:**
+
+
+```bash
+  sudo apt install ca-certificates curl gnupg -y
+```
+
+
+```bash
+  sudo install -m 0755 -d /etc/apt/keyrings
+```
+
+```bash
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+```bash
+  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+```
+
+```bash
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+```bash
+  sudo apt update
+```
+
+```bash
+  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+```
+
+### 3. Allow Docker to Run Without sudo
+
+Add your user to the Docker group:
+```bash
+  sudo usermod -aG docker $USER
+```
+Apply the group changes:
+```bash
+  newgrp docker
+```
+
+### 4. Download the n8n Docker Image
+
+Pull the official n8n image:
+```bash
+  docker pull docker.n8n.io/n8nio/n8n
+```
+### 5. Run n8n in Docker
+```bash
+docker run -d \
+  --name n8n \
+  -p 5678:5678 \
+  -e WEBHOOK_URL=https://subdomain.domain.com \
+  -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem \
+  -v ~/.n8n:/home/node/.n8n \
+  docker.n8n.io/n8nio/n8n
+```
+
+### 6. Tunnel configuration
+
+Follow the course.
+
+Links  needed :
+
+- **Domain discount finder:** [TLD-List](https://tld-list.com)
+- **Cloudflare**: [Link](https://dash.cloudflare.com)
+
+> **ℹ️ If you cannot buy a domain, you can ask for a ready one from us (Registered members only)**
