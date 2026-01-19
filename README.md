@@ -189,4 +189,16 @@ Links  needed :
 
 
 ## Getting started (Self-hosted)
-After finishing the installation, you can access n8n using the link: http://localhost:5678
+After completing the installation and starting the n8n container, the service
+will be running locally on your machine.
+
+To access the n8n interface, open your web browser and navigate to:
+
+http://localhost:5678
+
+Once the page loads, you will see the n8n welcome screen, where you create an account, and then you can begin
+creating workflows, configuring credentials, and exploring available nodes.
+
+
+
+
