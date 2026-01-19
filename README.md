@@ -184,3 +184,8 @@ Links  needed :
 - **Cloudflare**: [Link](https://dash.cloudflare.com)
 
 > **ℹ️ If you cannot buy a domain, you can ask for a ready one from us (Registered members only)**
+
+
+
+## Getting started
+After finishing the installation, you can access n8n using the link : http://localhost:5678
