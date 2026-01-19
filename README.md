@@ -42,7 +42,7 @@ and manage professional automation workflows using n8n.
 
 ## 🖥️ System Preparation (Windows)
 
-### 1️⃣ Enable Virtualization (BIOS)
+### 1. Enable Virtualization (BIOS)
 
 Restart your PC and enter the BIOS settings, then enable:
 
@@ -56,7 +56,7 @@ Save the changes and exit the BIOS to apply them.
 
 ---
 
-### 2️⃣ Install WSL (Windows Subsystem for Linux)
+### 2. Install WSL (Windows Subsystem for Linux)
 
 Open **Command Prompt as Administrator** and run:
 
@@ -65,7 +65,7 @@ wsl --install
 ```
 Restart your PC when asked.
 
-### 3️⃣ Download Docker Desktop
+### 3. Download Docker Desktop
 
 Download and install [**Docker Desktop**](https://www.docker.com/products/docker-desktop/) from the official website.
 >
@@ -80,3 +80,15 @@ To know which version is compatible with your PC :
 | :--- | :--- |
 | **AMD64** | **Download for Windows – AMD64** |
 | **ARM64** | **Download for Windows – ARM64** |
+>
+### 4. Download the n8n Docker Image
+Make sure Docker Desktop is running, open CMD then pull the n8n image using :
+```cmd
+   docker pull docker.n8n.io/n8nio/n8n
+```
+
+### 5. Run n8n in Docker
+Now you can start n8n using : 
+```cmd
+docker run -d --name n8n -p 5678:5678 -e WEBHOOK_URL=https://subdomain.domain.com -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem -v "C:\Users\%USERNAME%\.n8n:/home/node/.n8n" docker.n8n.io/n8nio/n8n
+```
