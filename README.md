@@ -187,5 +187,5 @@ Links  needed :
 
 
 
-## Getting started
-After finishing the installation, you can access n8n using the link : http://localhost:5678
+## Getting started (Self-hosted)
+After finishing the installation, you can access n8n using the link: http://localhost:5678
