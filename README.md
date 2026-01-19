@@ -212,7 +212,7 @@ container.
 | **1. Stop Container** | <pre><code>docker stop n8n</code></pre> | Stop the running n8n container |
 | **2. Remove Container** | <pre><code>docker rm n8n</code></pre> | Remove the old container (data remains in volume) |
 | **3. Pull Latest Image** | <pre><code>docker pull docker.n8n.io/n8nio/n8n</code></pre> | Download the latest n8n Docker image |
-| **4. Start New Container** | For this, go back to **Run n8n in Docker** section to copy the code from the installation guide [For Windows]([https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker](https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker) or [For Linux](https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker-1) | Launch updated n8n with preserved data and settings |
+| **4. Start New Container** | For this, go back to **Run n8n in Docker** section to copy the code from the installation guide [For Windows](https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker) or [For Linux](https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker-1) | Launch updated n8n with preserved data and settings |
 
 
 ## n8n Projects 
