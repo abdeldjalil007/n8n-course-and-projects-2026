@@ -90,6 +90,11 @@ Make sure Docker Desktop is running, open CMD then pull the n8n image using :
 ### 5. Run n8n in Docker
 
 Now you can start n8n using : 
+
+```cmd
+docker run -d --name n8n -p 5678:5678 -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem -v "C:\Users\%USERNAME%\.n8n:/home/node/.n8n" docker.n8n.io/n8nio/n8n
+```
+
 ```cmd
 docker run -d --name n8n -p 5678:5678 -e WEBHOOK_URL=https://subdomain.domain.com -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem -v "C:\Users\%USERNAME%\.n8n:/home/node/.n8n" docker.n8n.io/n8nio/n8n
 ```
