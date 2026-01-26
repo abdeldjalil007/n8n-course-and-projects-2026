@@ -41,6 +41,35 @@ and manage professional automation workflows using n8n.
 - **Enthusiasm** to learn automation and AI agents!
 - **No coding experience is required** - n8n is visual!
 
+## ⬇️ Installation methods 
+
+### npx (Node Package Executor):
+
+**Purpose:** Executing CLI binaries without needing to install them.
+
+
+**Usage:** Ideal for one-time tools (e.g., npx create-react-app).
+
+
+**Temporary:** Downloads the package to a temporary cache, executes it, and then removes it, preventing machine clutter. 
+
+### npm (Node Package Manager):
+**Purpose:** Installing, upgrading, and removing packages.
+
+
+**Usage:** Ideal for adding libraries to a package.json file (e.g., npm install <package>).
+
+
+
+### Docker 
+
+**Purpose:** Creating, deploying, and running applications in containers. While npm and npx manage your code's dependencies, Docker manages the entire environment (OS, libraries, and configurations) those dependencies live in.
+
+**Usage:** Ideal for ensuring an application runs the same way on a developer's laptop as it does in production. It solves the "it works on my machine" problem.
+
+#### NB :
+****In this course, we will see and focus on the Docker method ...****
+
 ## 🖥️ System Preparation (Windows)
 
 ### 1. Enable Virtualization (BIOS)
@@ -74,7 +103,7 @@ To know which version is compatible with your PC :
 2. Type `cmd` and press Enter to open Command Prompt  
 3. In the Command Prompt window, type the following command and press Enter:
 ```cmd
-   echo %PROCESSOR_ARCHITECTURE%
+echo %PROCESSOR_ARCHITECTURE%
 ```
 | If the output is... | You should choose... |
 | :--- | :--- |
@@ -84,20 +113,25 @@ To know which version is compatible with your PC :
 ### 4. Download the n8n Docker Image
 Make sure Docker Desktop is running, open CMD then pull the n8n image using :
 ```cmd
-   docker pull docker.n8n.io/n8nio/n8n
+docker pull docker.n8n.io/n8nio/n8n
 ```
 
 ### 5. Run n8n in Docker
 
 Now you can start n8n using : 
 
+Without tunnel
+
 ```cmd
 docker run -d --name n8n -p 5678:5678 -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem -v "C:\Users\%USERNAME%\.n8n:/home/node/.n8n" docker.n8n.io/n8nio/n8n
 ```
 
+With tunnel  
+
 ```cmd
 docker run -d --name n8n -p 5678:5678 -e WEBHOOK_URL=https://subdomain.domain.com -e N8N_DEFAULT_BINARY_DATA_MODE=filesystem -v "C:\Users\%USERNAME%\.n8n:/home/node/.n8n" docker.n8n.io/n8nio/n8n
 ```
+
 ### 6. Tunnel configuration
 
 Follow the course.
@@ -108,6 +142,7 @@ Links  needed :
 - **Cloudflare**: [Link](https://dash.cloudflare.com)
 
 > **ℹ️ If you cannot buy a domain, you can ask for a ready one from us (Registered members only)**
+
 
 ## 🖥️ System Preparation (Linux – Ubuntu/Debian)
 
@@ -124,50 +159,50 @@ Run the following commands **one by one, in this exact order:**
 
 
 ```bash
-  sudo apt install ca-certificates curl gnupg -y
+sudo apt install ca-certificates curl gnupg -y
 ```
 
 
 ```bash
-  sudo install -m 0755 -d /etc/apt/keyrings
+sudo install -m 0755 -d /etc/apt/keyrings
 ```
 
 ```bash
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
 ```bash
-  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 
 ```bash
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
 ```bash
-  sudo apt update
+sudo apt update
 ```
 
 ```bash
-  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
 
 ### 3. Allow Docker to Run Without sudo
 
 Add your user to the Docker group:
 ```bash
-  sudo usermod -aG docker $USER
+sudo usermod -aG docker $USER
 ```
 Apply the group changes:
 ```bash
-  newgrp docker
+newgrp docker
 ```
 
 ### 4. Download the n8n Docker Image
 
 Pull the official n8n image:
 ```bash
-  docker pull docker.n8n.io/n8nio/n8n
+docker pull docker.n8n.io/n8nio/n8n
 ```
 ### 5. Run n8n in Docker
 ```bash
