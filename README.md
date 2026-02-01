@@ -87,7 +87,11 @@ Save the changes and exit the BIOS to apply them.
 
 ### 2. Install WSL (Windows Subsystem for Linux)
 
-Open **Command Prompt as Administrator** and run:
+First, **check** if it's already installed by running :
+```bash
+wsl --status
+```
+If nothing shows, we need to install it by opening **Command Prompt as Administrator** and running:
 
 ```bash
 wsl --install
