@@ -1,4 +1,4 @@
-# 🤖 Automation & AI agents engineering private course
+# 🤖 Automation & AI agents engineering course
 Welcome to this private course repository.
 
 This repository contains exclusive materials, source code, and resources
@@ -258,8 +258,19 @@ container.
 | **3. Pull Latest Image** | <pre><code>docker pull docker.n8n.io/n8nio/n8n</code></pre> | Download the latest n8n Docker image |
 | **4. Start New Container** | For this, go back to **Run n8n in Docker** section to copy the code from the installation guide [For Windows](https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker) or [For Linux](https://github.com/abdeldjalil007/n8n-course-and-projects-2026?tab=readme-ov-file#5-run-n8n-in-docker-1) | Launch updated n8n with preserved data and settings |
 
+## Course resources 
+In this section, you'll find the workflows we used in the course :
+
+
+| Couse | Source File | 
+|---------|-------------|
+| **n8n triggers** | [📁 Download](workflows/n8n_triggers.json) | 
+| **Json and data types** | [📁 Download](workflows/json_and_data_types.json) | 
+
+
 
 ## n8n Projects 
+
 
 ### 🟢 **Beginner Level Projects**
 
